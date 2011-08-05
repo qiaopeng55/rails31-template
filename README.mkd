@@ -19,13 +19,20 @@ Using this is as easy as 1-2-3.
 $ git clone git://github.com/scholarslab/rails31-template.git my-cool-project
 ```
 
-*Second*: Run a `rake` task to rename the classes in the project:
+*Second*: Set up the Rails bundle for that project:
+
+```bash
+$ cd my-cool-project
+$ bundle install --binstubs
+```
+
+*Third*: Run a `rake` task to rename the classes in the project:
 
 ```bash
 $ rake template:name name=MyCoolProject
 ```
 
-*Third*: Umm. That's it really. Create your cool project, I guess.
+Now you're ready to go conquer the world with your site!
 
 ## The Boilerplate
 

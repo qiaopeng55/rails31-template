@@ -1,6 +1,7 @@
 
 DEFAULT_NAME = 'Rails31Template'
-FILES_WITH_NAME = %w{config/application.rb
+FILES_WITH_NAME = %w{config.ru
+                     config/application.rb
                      config/environment.rb
                      config/environments/development.rb
                      config/environments/production.rb

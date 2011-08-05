@@ -1,0 +1,76 @@
+
+# Rails 3.1 Template
+
+This is a template for new Rails projects. It incorporates files from these
+projects to provide a solid basis for a new site.
+
+ * [Rails 3.1.0.rc5](https://rubygems.org/gems/rails/versions/3.1.0.rc5);
+ * [HTML5 Boilerplate](http://html5boilerplate.com/) (downloaded Aug. 5, 2011);
+ * [960.gs](http://960.gs/) (also downloaded Aug. 5, 2011); and
+ * a few gems (see below).
+
+## Getting Started
+
+Using this is as easy as 1-2-3.
+
+*First*: Clone this project from GitHub into a new directory:
+
+```bash
+$ git clone git://github.com/scholarslab/rails31-template.git my-cool-project
+```
+
+*Second*: Run a `rake` task to rename the classes in the project:
+
+```bash
+$ rake template:name name=MyCoolProject
+```
+
+*Third*: Umm. That's it really. Create your cool project, I guess.
+
+## The Boilerplate
+
+The main HTML file is incorporated into
+`app/views/layouts/application.html.erb`.
+
+## Images
+
+The `favicon.ico` and PNG files for mobile devices are all in `public/`.
+
+## Stylesheets
+
+The stylesheets from HTML5 Boilerplate and 960.gs are all in
+`app/assets/stylesheets`. Each file there has a numeric prefix to control the
+order they're loaded in. They're also named so you can see where the file came
+from:
+
+```bash
+$ ls app/assets/stylesheets/ -1
+000-html5-reset.css
+010-960-text.css
+011-960.css
+555-style.css
+999-html5-media-fixes.css
+application.css
+```
+
+Of course, because of the asset pipeline, these are all concatenated into one
+big file.
+
+## JavaScript
+
+I opted not to use the jQuery provided with HTML5 Boilerplate, so Rails takes
+care of that.
+
+The other JavaScript bundled with HTML5 Boilerplate is in a couple of different
+places:
+
+ * **modernizr** and **dd_belatedpng** are in `public/` because we have to
+   control how they're loaded (Modernizr is loaded in the header, and
+   dd_belatedpng is only loaded for IE).
+ * **plugins.js** and **script.js** are in `app/assets/javascripts`. You can
+   use `script.js` to include your own JavaScript. Except for an empty closure
+   and function call, it's currently empty.
+
+Also, except for Modernizr, the JavaScript all gets loaded at the bottom of the
+page, following HTML5 Boilerplate's practice.
+

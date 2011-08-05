@@ -7,6 +7,11 @@ gem 'rails', '3.1.0.rc5'
 
 gem 'sqlite3'
 
+# Other gems to consider:
+# gem 'cancan'
+# gem 'devise'
+# gem 'acts-as-taggable-on'
+# gem 'awesome_nested_set'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -81,3 +81,18 @@ places:
 Also, except for Modernizr, the JavaScript all gets loaded at the bottom of the
 page, following HTML5 Boilerplate's practice.
 
+## Gems
+
+This adds a few gems to a few environments.
+
+ * [rspec-rails](https://rubygems.org/gems/rspec-rails) for development and
+   test.
+ * [annotate](https://rubygems.org/gems/annotate) for development.
+ * [faker](https://rubygems.org/gems/faker) for development.
+ * [webrat](https://rubygems.org/gems/webrat) for test.
+ * [spork](https://rubygems.org/gems/spork) for test.
+ * [factory_girl_rails](https://rubygems.org/gems/factory_girl_rails) for test.
+
+The `Gemfile` also has a few suggestions for gems commented out. I'll leave
+those for you to discover.
+

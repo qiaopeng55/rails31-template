@@ -1,0 +1,63 @@
+
+# Rails 3.1 Template
+
+This is a template for new Rails projects. It incorporates files from these
+projects to provide a solid basis for a new site.
+
+ * [Rails](https://rubygems.org/gems/rails) (this was tested with version
+   3.1.0.rc5);
+ * [HTML5 Boilerplate](http://html5boilerplate.com/);
+ * [960.gs](http://960.gs/); and
+ * a few gems (see below).
+
+## Using the Template
+
+Using this is as easy as 1-2-3.
+
+*First*: Create a new Rails project, using the `rails31-slab.rb` file as a
+template:
+
+```bash
+$ rails new PROJECT -m https://github.com/scholarslab/rails31-template/raw/master/rails31-slab.rb
+```
+
+Answer the questions. It will ask whether you want to install
+[devise](https://github.com/plataformatec/devise), and if so, what you want to
+name the model for users. If you do want to use devise, look through the
+messages for some post-install instructions.
+
+*Second*: `cd` into the project directory and build something!
+
+## Details
+
+### The Boilerplate
+
+The main HTML file is incorporated into
+`app/views/layouts/application.html.erb`.
+
+### Stylesheets
+
+The stylesheets from HTML5 Boilerplate and 960.gs are all in
+`vendor/assets/stylesheets`. 
+
+### JavaScript
+
+I opted not to use the jQuery provided with HTML5 Boilerplate, so Rails takes
+care of that.
+
+The other JavaScript bundled with HTML5 Boilerplate is in
+`vendor/assets/javascripts`.
+
+### Gems
+
+This adds a few gems to a few environments.
+
+ * [rspec-rails](https://rubygems.org/gems/rspec-rails) for development and
+   test.
+ * [annotate](https://rubygems.org/gems/annotate) for development.
+ * [ffaker](https://rubygems.org/gems/ffaker) for development.
+ * [simplecov](https://rubygems.org/gems/simplecov) for development and test.
+ * [webrat](https://rubygems.org/gems/webrat) for test.
+ * [spork](https://rubygems.org/gems/spork) for test.
+ * [factory_girl_rails](https://rubygems.org/gems/factory_girl_rails) for test.
+

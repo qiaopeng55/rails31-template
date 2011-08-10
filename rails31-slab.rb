@@ -35,6 +35,8 @@ inside('app/views/layouts') do
 end
 
 get "https://raw.github.com/paulirish/html5-boilerplate/master/index.html", "app/views/layouts/application.html.erb"
+add_file "app/views/layouts/_header.html.erb"
+add_file "app/views/layouts/_footer.html.erb"
 
 # rewrite stylesheet inclusion
 gsub_file 'app/views/layouts/application.html.erb', /<link rel="stylesheet" href="css\/style.css">/ do
@@ -47,7 +49,21 @@ gsub_file 'app/views/layouts/application.html.erb', /<meta charset="utf-8">/ do
   <%= csrf_meta_tag %>"
 end
 
-gsub_file 'app/views/layouts/application.html.erb', /<div id="container">[\s\S]*<\/div>/, '<%= yield %>'
+gsub_file 'app/views/layouts/application.html.erb', /<div id="container">[\s\S]*<\/div>/ do
+  %q{<div id="container">
+     <header>
+      <%= render 'layouts/header' %>
+     </header>
+
+     <div id="main" role="main">
+      <%= yield %>
+     </div>
+
+     <footer>
+      <%= render 'layouts/footer' %>
+     </footer>
+    </div>}
+end
 gsub_file 'app/views/layouts/application.html.erb', /<!-- Grab Google CDN's jQuery[\s\S]*end scripts-->/, '<%= javascript_include_tag "application" %>'
 
 # use rvm

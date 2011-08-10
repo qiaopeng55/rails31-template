@@ -90,8 +90,8 @@ generate 'rspec:install'
 remove_file "public/index.html"
 remove_file "public/images/rails.png"
 
-run 'cp config.database.yml config/database.example'
-run "echo 'config/database.yml' >> .gitignore'"
+run 'cp config/database.yml config/database.example'
+run "echo 'config/database.yml' >> .gitignore"
 
 # git
 git :init

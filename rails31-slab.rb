@@ -108,7 +108,6 @@ gem "simplecov", :group => [:development, :test]
 gem "rspec-rails", :group => [:development, :test]
 gem "webrat", :group => [:test]
 gem "spork", :group => [:test]
-gem "spork", :group => [:test]
 gem "factory_girl_rails", :group => [:test]
 
 # Run again now to make sure everything's installed for the rake tasks to

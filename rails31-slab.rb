@@ -29,6 +29,20 @@ get "https://raw.github.com/paulirish/html5-boilerplate/master/.htaccess", "publ
 get "https://raw.github.com/paulirish/html5-boilerplate/master/crossdomain.xml", "public/crossdomain.xml"
 get "https://raw.github.com/paulirish/html5-boilerplate/master/humans.txt", "public/humans.txt"
 
+append_to_file 'public/humans.txt' do
+  %q{
+
+
+  ______          __             __                       _   _____            _
+.' ____ \        [  |           [  |                     | | |_   _|          [  |
+| (___ \_| .---.  | |--.   .--.  | |  ,--.   _ .--.  .--.\_|   | |      ,--.   | |.--.
+ _.____`. / /'`\] | .-. |/ .'`\ \| | `'_\ : [ `/'`\]( (`\]     | |   _ `'_\ :  | '/'`\ \
+| \____) || \__.  | | | || \__. || | // | |, | |     `'.'.    _| |__/ |// | |, |  \__/ |
+ \______.''.___.'[___]|__]'.__.'[___]\'-;__/[___]   [\__) )  |________|\'-;__/[__;.__.'
+
+}
+end
+
 # Update application.html.erb with HTML Boilerplate index.html content
 inside('app/views/layouts') do
   FileUtils.rm_rf 'application.html.erb'

@@ -14,7 +14,7 @@
 #
 
 # Download Modernizr JS libraries
-get "https://raw.github.com/paulirish/html5-boilerplate/master/js/libs/modernizr-2.0.6.min.js", "public/javascripts/modernizr.min.js"
+get "https://raw.github.com/paulirish/html5-boilerplate/master/js/libs/modernizr-2.0.6.min.js", "vendor/assets/javascripts/modernizr.min.js"
 
 # Download HTML5 Boilerplate & 960gs stylesheets
 get "https://raw.github.com/paulirish/html5-boilerplate/master/css/style.css", "vendor/assets/stylesheets/style.css"

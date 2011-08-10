@@ -17,8 +17,8 @@
 get "https://raw.github.com/paulirish/html5-boilerplate/master/js/libs/modernizr-2.0.6.min.js", "public/javascripts/modernizr.min.js"
 
 # Download HTML5 Boilerplate & 960gs stylesheets
-get "https://raw.github.com/paulirish/html5-boilerplate/master/css/style.css", "public/stylesheets/style.css"
-get "http://grids.heroku.com/grid.css?column_width=60&column_amount=12&gutter_width=20", "public/stylesheets/960gs.css"
+get "https://raw.github.com/paulirish/html5-boilerplate/master/css/style.css", "vendor/stylesheets/style.css"
+get "http://grids.heroku.com/grid.css?column_width=60&column_amount=12&gutter_width=20", "vendor/stylesheets/960gs.css"
 
 # TODO: scholarslab icons; 114x114, 57x57, 72x72
 

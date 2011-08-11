@@ -15,9 +15,10 @@
 
 # Download HTML5 Boilerplate & 960gs stylesheets
 get "https://raw.github.com/paulirish/html5-boilerplate/master/css/style.css", "vendor/assets/stylesheets/style.css"
-get "http://grids.heroku.com/grid.css?column_width=60&column_amount=12&gutter_width=20", "vendor/assets/stylesheets/960gs.css"
+get "http://grids.heroku.com/fluid_grid.css?column_width=60&column_amount=12&gutter_width=20", "vendor/assets/stylesheets/960gs.css"
 
 gsub_file 'vendor/assets/stylesheets/style.css', / \* ==\|== normalize ==========================================================/, ' *'
+gsub_file 'app/assets/stylesheets/application.css', / \*= require_self/, " *= require 960gs\n *= require style\n *= require_self\n"
 
 # Get the plugins.js file.
 get "https://github.com/paulirish/html5-boilerplate/raw/master/js/plugins.js", "vendor/assets/javascripts/plugins.js"
@@ -56,7 +57,7 @@ add_file "app/views/layouts/_footer.html.erb"
 
 # rewrite stylesheet inclusion
 gsub_file 'app/views/layouts/application.html.erb', /<link rel="stylesheet" href="css\/style.css">/ do
-  "<%= stylesheet_link_tag \"style\", \"960gs\", \"application\" %>"
+  "<%= stylesheet_link_tag \"application\" %>"
 end
 
 gsub_file 'app/views/layouts/application.html.erb', /<script src="js\/libs\/modernizr-2.0.6.min.js"><\/script>/, '<%= javascript_include_tag "modernizr" %>'

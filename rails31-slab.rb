@@ -83,14 +83,15 @@ gsub_file 'app/views/layouts/application.html.erb', /<!-- Grab Google CDN's jQue
 # use rvm
 create_file ".rvmrc", "rvm use 1.9.2"
 
-# Need to run here to get rid of error messages during 'generate
-# "devise:install"' below.
-run "bundle install"
-
 # gems
 if yes?("Would you like to install Devise?")
   gem "devise"
   gem "cancan"
+
+  # Need to run here to get rid of error messages during 'generate
+  # "devise:install"' below.
+  run "bundle install"
+
   model_name = ask("What would you like your user model be be named? [user]: ")
   model_name = "user" if model_name.blank?
 

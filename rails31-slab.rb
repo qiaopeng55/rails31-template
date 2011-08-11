@@ -13,9 +13,6 @@
 # \______.''.___.'[___]|__]'.__.'[___]\'-;__/[___]   [\__) )  |________|\'-;__/[__;.__.'
 #
 
-# Download Modernizr JS libraries
-get "https://raw.github.com/paulirish/html5-boilerplate/master/js/libs/modernizr-2.0.6.min.js", "vendor/assets/javascripts/modernizr.min.js"
-
 # Download HTML5 Boilerplate & 960gs stylesheets
 get "https://raw.github.com/paulirish/html5-boilerplate/master/css/style.css", "vendor/assets/stylesheets/style.css"
 get "http://grids.heroku.com/grid.css?column_width=60&column_amount=12&gutter_width=20", "vendor/assets/stylesheets/960gs.css"
@@ -57,7 +54,7 @@ gsub_file 'app/views/layouts/application.html.erb', /<link rel="stylesheet" href
   "<%= stylesheet_link_tag \"style\", \"960gs\", \"application\" %>"
 end
 
-gsub_file 'app/views/layouts/application.html.erb', /<script src="js\/libs\/modernizr-2.0.6.min.js"><\/script>/, '<%= javascript_include_tag "modernizr.min", :cache => "modernizr" %>'
+gsub_file 'app/views/layouts/application.html.erb', /<script src="js\/libs\/modernizr-2.0.6.min.js"><\/script>/, '<%= javascript_include_tag "modernizr" %>'
 gsub_file 'app/views/layouts/application.html.erb', /<meta charset="utf-8">/ do
   "<meta charset=\"utf-8\">
   <%= csrf_meta_tag %>"
@@ -101,6 +98,8 @@ if yes?("Would you like to install Devise?")
   generate "devise:views"
   generate "cancan:ability"
 end
+
+gem 'modernizr-rails'
 
 gem "rspec-rails", :group => [:development, :test]
 gem "annotate", :group => [:development]

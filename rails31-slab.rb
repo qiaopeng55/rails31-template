@@ -19,6 +19,11 @@ get "http://grids.heroku.com/grid.css?column_width=60&column_amount=12&gutter_wi
 
 gsub_file 'vendor/assets/stylesheets/style.css', / \* ==\|== normalize ==========================================================/, ' *'
 
+# Get the plugins.js file.
+get "https://github.com/paulirish/html5-boilerplate/raw/master/js/plugins.js", "vendor/assets/javascripts/plugins.js"
+
+gsub_file 'app/assets/javascripts/application.js', /\/\/= require_tree \./, "//= require plugins\n//= require_tree .\n"
+
 # TODO: scholarslab icons; 114x114, 57x57, 72x72
 
 # Boilerplate assets

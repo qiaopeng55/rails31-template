@@ -102,7 +102,9 @@ end
 gem 'modernizr-rails'
 
 gem "rspec-rails", :group => [:development, :test]
-gem "annotate", :group => [:development]
+# We're pulling this until this issue gets worked out:
+# https://github.com/ctran/annotate_models/issues/28
+# gem "annotate", :group => [:development]
 gem "ffaker", :group => [:development]
 gem "simplecov", :group => [:development, :test]
 gem "rspec-rails", :group => [:development, :test]

@@ -93,7 +93,7 @@ if yes?("Would you like to install Devise?")
 
   # Need to run here to get rid of error messages during 'generate
   # "devise:install"' below.
-  run "bundle install"
+  run "bundle install --without production"
 
   model_name = ask("What would you like your user model be be named? [user]: ")
   model_name = "user" if model_name.blank?
@@ -118,9 +118,16 @@ gem "webrat", :group => [:test]
 gem "spork", :group => [:test]
 gem "factory_girl_rails", :group => [:test]
 
+if yes?("Will you deploy to Heroku (http://www.heroku.com/) [y/n]?")
+  append_to_file 'Gemfile', "\n# Gems for deploying to Heroku.\n"
+  gem 'therubyracer-heroku', :group => [:production]
+  gem 'pg', :group => [:production]
+  append_to_file 'Gemfile', "\n"
+end
+
 # Run again now to make sure everything's installed for the rake tasks to
 # follow.
-run "bundle install"
+run "bundle install --without production"
 
 # set up the database
 rake "db:create", :env => 'development'
